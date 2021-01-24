@@ -1,0 +1,10 @@
+name: SafezoneTimer
+main: io.github.tacticalaxis.safezonetimer.SafezoneTimer
+version: 1.0
+depend: [WorldGuard]
+description: A plugin which detects movement from a region
+author: NathanD256
+prefix: SZT
+commands:
+  szt:
+    description: Command to reload the plugin

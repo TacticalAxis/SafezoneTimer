@@ -1,0 +1,9 @@
+# must be a string, for worldguard id name
+safezones:
+  - safezone0
+  - safezone1
+  - safezone2
+# must be an integer, for seconds
+safezone-leave-time: 15
+# must be text, do %seconds% to show seconds
+safezone-leave-message: "You have %seconds% seconds left of invincibility!"

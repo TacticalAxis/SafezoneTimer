@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SafezoneTimer:jar">
+    <output-path>$PROJECT_DIR$/../../Testing-Server/plugins</output-path>
+    <root id="archive" name="SafezoneTimer.jar">
+      <element id="module-output" name="SafezoneTimer" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../Testing-Server/thermos1.7.10.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
