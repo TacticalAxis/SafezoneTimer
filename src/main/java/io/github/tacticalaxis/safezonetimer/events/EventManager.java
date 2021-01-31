@@ -63,34 +63,42 @@ public class EventManager implements Listener {
 
     @EventHandler
     public void damage(EntityDamageByEntityEvent event) {
-        if (event.getEntity() instanceof Player) {
-            Player player = (Player) event.getEntity();
-            if (isSafezone(player.getLocation())) {
-                event.setCancelled(true);
-            } else {
+        if (isSafezone(event.getEntity().getLocation()) || isSafezone(event.getDamager().getLocation())) {
+            event.setCancelled(true);
+        } else {
+            if (event.getEntity() instanceof Player) {
+                Player player = (Player) event.getEntity();
                 if (SafezoneTimer.leftPlayers.containsKey(player)) {
                     event.setCancelled(true);
                 }
             }
-            if (isSafezone(event.getDamager().getLocation())) {
-                event.setCancelled(true);
+
+            if (event.getDamager() instanceof Player) {
+                Player player = (Player) event.getDamager();
+                if (SafezoneTimer.leftPlayers.containsKey(player)) {
+                    event.setCancelled(true);
+                }
             }
         }
     }
 
     @EventHandler
     public void damage(EntityDamageByBlockEvent event) {
-        if (event.getEntity() instanceof Player) {
-            Player player = (Player) event.getEntity();
-            if (isSafezone(player.getLocation())) {
-                event.setCancelled(true);
-            } else {
+        if (isSafezone(event.getEntity().getLocation()) || isSafezone(event.getDamager().getLocation())) {
+            event.setCancelled(true);
+        } else {
+            if (event.getEntity() instanceof Player) {
+                Player player = (Player) event.getEntity();
                 if (SafezoneTimer.leftPlayers.containsKey(player)) {
                     event.setCancelled(true);
                 }
             }
-            if (isSafezone(event.getDamager().getLocation())) {
-                event.setCancelled(true);
+
+            if (event.getDamager() instanceof Player) {
+                Player player = (Player) event.getDamager();
+                if (SafezoneTimer.leftPlayers.containsKey(player)) {
+                    event.setCancelled(true);
+                }
             }
         }
     }
